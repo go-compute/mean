@@ -19,7 +19,7 @@ GO_HTML_REPORT_PATH ?= $(GO_OUT)/coverage.out
 SOURCES ?= lib/*.go
 
 # Test files:
-TESTS ?= test/*.go
+TESTS ?= lib/*_test.go
 
 
 
@@ -44,7 +44,7 @@ notes:
 test: test-go
 
 test-go:
-	go test
+	go test ./lib
 
 
 
