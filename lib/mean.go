@@ -1,3 +1,4 @@
+// Computes the arithmetic mean of a numeric array.
 package mean
 
 // Computes the arithmetic mean of a numeric array.

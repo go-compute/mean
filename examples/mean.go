@@ -1,3 +1,4 @@
+// Example program which computes the arithmetic mean of a numeric array.
 package main
 
 import (
@@ -5,6 +6,7 @@ import (
 	compute "github.com/go-compute/mean/lib"
 )
 
+// Example which computes the arithmetic mean of a numeric array.
 func main() {
 	var data []float64 = make( []float64, 101 )
 	for i := 0; i < len( data ); i++ {
