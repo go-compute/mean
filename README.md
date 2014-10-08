@@ -2,7 +2,7 @@ Mean
 ====
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
-> Calculates the arithmetic mean of a numeric array.
+> Computes the arithmetic mean of a numeric array.
 
 
 

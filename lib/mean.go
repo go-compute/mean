@@ -1,8 +1,6 @@
 package mean
 
-/**
-* Calculates the arithmetic mean of a numeric array.
- */
+// Computes the arithmetic mean of a numeric array.
 func Mean(arr []float64) (mean float64) {
 	N := 0
 	delta := 0.0
