@@ -9,11 +9,20 @@ NOTES ?= 'TODO|FIXME'
 
 # TESTING #
 
-GO_OUT ?= ./reports/coverage
-GO_HTML_REPORT_PATH ?= $(GO_OUT)/coverage.out
+GO_TEST ?= go test
+GO_TEST_COV ?= go tool cover
+GO_TEST_OUT ?= ./reports/coverage
+#GO_TEST_MODE ?= set
+GO_TEST_REPORT_COV_PATH ?= $(GO_TEST_OUT)/coverage.out
+GO_TEST_REPORT_COUNT_PATH ?= $(GO_TEST_OUT)/count.out
+GO_TEST_REPORT_COV_HTML_PATH ?= $(GO_TEST_OUT)/coverage.html
+GO_TEST_REPORT_COUNT_HTML_PATH ?= $(GO_TEST_OUT)/count.html
 
 
 # FILES #
+
+# Source directory:
+SRC ?= ./lib
 
 # Source files:
 SOURCES ?= lib/*.go
@@ -44,7 +53,7 @@ notes:
 test: test-go
 
 test-go:
-	go test ./lib
+	$(GO_TEST) $(SRC)
 
 
 
@@ -55,19 +64,50 @@ test-go:
 test-cov: test-go-cov
 
 test-go-cov:
-	go test -cover
-
+	mkdir -p $(GO_TEST_OUT)
+	$(GO_TEST) \
+		-coverprofile $(GO_TEST_REPORT_COV_PATH) \
+		-covermode set \
+		$(SRC)
+	$(GO_TEST_COV) \
+		-html $(GO_TEST_REPORT_COV_PATH) \
+		-o $(GO_TEST_REPORT_COV_HTML_PATH)
+	$(GO_TEST) \
+		-coverprofile $(GO_TEST_REPORT_COUNT_PATH) \
+		-covermode count \
+		$(SRC)
+	$(GO_TEST_COV) \
+		-html $(GO_TEST_REPORT_COUNT_PATH) \
+		-o $(GO_TEST_REPORT_COUNT_HTML_PATH)
 
 
 # COVERAGE REPORT #
 
-.PHONY: view-cov view-go-report
+.PHONY: view-cov view-go-report view-cov-counts view-go-counts-report
 
 view-cov: view-go-report
 
 view-go-report:
-	go tool cover -html=$(GO_HTML_REPORT_PATH)
+	open $(GO_TEST_REPORT_COV_HTML_PATH)
 
+view-cov-counts: view-go-counts-report
+
+view-go-counts-report:
+	open $(GO_TEST_REPORT_COUNT_HTML_PATH)
+
+
+
+# BENCHMARKS #
+
+.PHONY: benchmarks benchmarks-go
+
+benchmarks: benchmarks-go
+
+# We assume a test named XXX is improbable...
+benchmarks-go:
+	$(GO_TEST) $(SRC) \
+		-bench . \
+		-run XXX
 
 
 # GO #
