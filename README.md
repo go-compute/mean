@@ -15,17 +15,17 @@ $ go get "github.com/go-compute/mean/lib"
 
 To use the package,
 
-``` golang
+``` go
 import (
 	compute "github.com/go-compute/mean/lib"
 )
 ```
 
-#### compute.Mean( arr []float64 ) ( mean float64 )
+#### compute.Mean( arr [ ]float64 ) ( mean float64 )
 
-Computes the arithmetic mean of a numeric array.
+Computes the arithmetic mean of a numeric `array`.
 
-``` golang
+``` go
 var data = make( []float64, 101 )
 for i := 0; i < len( data ); i++ {
 	data[ i ] = float64( i )
@@ -37,7 +37,7 @@ mu := compute.Mean( data )
 
 ## Examples
 
-``` golang
+``` go
 package main
 
 import (
