@@ -32,13 +32,16 @@ GO_TEST_REPORT_COUNT_HTML_PATH ?= $(GO_TEST_OUT)/count.html
 # FILES #
 
 # Source directory:
-SRC ?= ./lib
+SRC ?= ./pkg
+
+# Benchmark directory:
+BENCHMARKS ?= ./pkg
 
 # Source files:
-SOURCES ?= lib/*.go
+SOURCES ?= pkg/*.go
 
 # Test files:
-TESTS ?= lib/*_test.go
+TESTS ?= pkg/*_test.go benchmarks/*.go
 
 
 
@@ -135,7 +138,7 @@ benchmarks: benchmarks-go
 
 # We assume a test named XXX is improbable...
 benchmarks-go:
-	$(GO_TEST) $(SRC) \
+	$(GO_TEST) $(BENCHMARKS) \
 		-bench . \
 		-run XXX
 

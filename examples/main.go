@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	compute "github.com/go-compute/mean/lib"
+	compute "github.com/go-compute/mean/pkg"
 )
 
 // Example which computes the arithmetic mean of a numeric array.

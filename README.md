@@ -8,7 +8,7 @@ Mean
 ## Installation
 
 ``` bash
-$ go get "github.com/go-compute/mean/lib"
+$ go get "github.com/go-compute/mean/pkg"
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ To use the package,
 
 ``` go
 import (
-	compute "github.com/go-compute/mean/lib"
+	compute "github.com/go-compute/mean/pkg"
 )
 ```
 
@@ -42,7 +42,7 @@ package main
 
 import (
 	"fmt"
-	compute "github.com/go-compute/mean/lib"
+	compute "github.com/go-compute/mean/pkg"
 )
 
 func main() {
@@ -58,7 +58,7 @@ func main() {
 To run the example code from the top-level application directory,
 
 ``` bash
-$ go run ./examples/mean.go
+$ go run ./examples/main.go
 ```
 
 
