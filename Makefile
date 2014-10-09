@@ -37,11 +37,14 @@ SRC ?= ./pkg
 # Benchmark directory:
 BENCHMARKS ?= ./pkg
 
+# Examples directory:
+EXAMPLES ?= ./examples
+
 # Source files:
 SOURCES ?= pkg/*.go
 
 # Test files:
-TESTS ?= pkg/*_test.go benchmarks/*.go
+TESTS ?= pkg/*_test.go
 
 
 
@@ -67,6 +70,7 @@ fmt: fmt-go
 
 fmt-go:
 	$(GO_FMT) $(SRC)
+	$(GO_FMT) $(EXAMPLES)
 
 
 # LINT #
@@ -77,6 +81,7 @@ lint: lint-go
 
 lint-go:
 	$(GO_LINT) $(SRC)
+	$(GO_LINT) $(EXAMPLES)
 
 
 # UNIT TESTS #
