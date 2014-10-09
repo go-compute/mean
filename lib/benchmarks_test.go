@@ -5,7 +5,7 @@ import (
 )
 
 func BenchmarkMean(b *testing.B) {
-	var data []float64 = make([]float64, 301)
+	var data = make([]float64, 301)
 	for i := 0; i < len(data); i++ {
 		data[i] = float64(i)
 	}

@@ -5,7 +5,7 @@ import (
 )
 
 func TestMean(t *testing.T) {
-	var data []float64 = make([]float64, 101)
+	var data = make([]float64, 101)
 	for i := 0; i < len(data); i++ {
 		data[i] = float64(i)
 	}

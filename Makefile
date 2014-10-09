@@ -7,6 +7,11 @@
 NOTES ?= 'TODO|FIXME'
 
 
+# FORMATTING #
+
+GO_FMT ?= go fmt
+
+
 # TESTING #
 
 GO_TEST ?= go test
@@ -44,6 +49,16 @@ TESTS ?= lib/*_test.go
 notes:
 	grep -Ern $(NOTES) $(SOURCES) $(TESTS)
 
+
+
+# FORMATTING #
+
+.PHONY: fmt fmt-go
+
+fmt: fmt-go
+
+fmt-go:
+	$(GO_FMT) $(SRC)
 
 
 # UNIT TESTS #
