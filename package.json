@@ -31,7 +31,7 @@
 		"avg"
 	],
 	"bugs": {
-		"url": "https://github.com/doc-metrix/memory-node/issues"
+		"url": "https://github.com/go-compute/mean/issues"
 	},
 	"dependencies": {},
 	"devDependencies": {},
