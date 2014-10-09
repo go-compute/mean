@@ -155,3 +155,21 @@ benchmarks-go:
 
 install:
 	go install
+
+# Build:
+.PHONY: build
+
+build:
+	go build
+
+# Update:
+.PHONY: update
+
+update:
+	go get -u
+
+# Clean:
+.PHONY: clean
+
+clean:
+	rm -rf ./reports ./build
