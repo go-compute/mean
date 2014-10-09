@@ -64,17 +64,19 @@ $ go run ./examples/mean.go
 
 ## Code Quality
 
-Code quality and style is checked using [golint](https://github.com/golang/lint). To install `golint` (note: you may need to install [Mercurial](http://mercurial.selenic.com/downloads)),
+Code quality and style is checked using [golint](https://github.com/golang/lint). Assuming you have installed `golint`
 
 ``` bash
 $ go get github.com/golang/lint/golint
 ```
 
-To run the linter, execute the following command in the top-level package directory:
+execute the following command in the top-level package directory:
 
 ``` bash
 $ make lint
 ```
+
+Note: to install `golint`, you may need to first install [Mercurial](http://mercurial.selenic.com/downloads).
 
 
 ## Tests
@@ -104,7 +106,7 @@ Running the coverage command creates a `./reports/coverage` directory. To access
 $ make view-cov
 ```
 
-Alternatively, for a report containing counts for how many times each statement is run,
+Alternatively, for a report containing the number of times each statement was run,
 
 ``` bash
 $ make view-cov-count
