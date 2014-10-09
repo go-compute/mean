@@ -12,6 +12,11 @@ NOTES ?= 'TODO|FIXME'
 GO_FMT ?= go fmt
 
 
+# LINTING #
+
+GO_LINT ?= golint
+
+
 # TESTING #
 
 GO_TEST ?= go test
@@ -59,6 +64,16 @@ fmt: fmt-go
 
 fmt-go:
 	$(GO_FMT) $(SRC)
+
+
+# LINT #
+
+.PHONY: lint lint-go
+
+lint: lint-go
+
+lint-go:
+	$(GO_LINT) $(SRC)
 
 
 # UNIT TESTS #
