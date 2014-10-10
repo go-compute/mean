@@ -28,7 +28,7 @@ Computes the arithmetic mean of a numeric `array`.
 ``` go
 data := []float64{7,3,1,5}
 mu := compute.Mean( data )
-// returns 5
+// returns 4
 ```
 
 
