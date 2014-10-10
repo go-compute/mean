@@ -34,11 +34,17 @@ GO_TEST_REPORT_COUNT_HTML_PATH ?= $(GO_TEST_OUT)/count.html
 # Source directory:
 SRC ?= ./pkg
 
+# Command directory:
+CMD ?= ./cmd/*
+
 # Benchmark directory:
 BENCHMARKS ?= ./pkg
 
 # Examples directory:
 EXAMPLES ?= ./examples
+
+# Command files:
+COMMANDS ?= cmd/*/*.go
 
 # Source files:
 SOURCES ?= pkg/*.go
@@ -58,7 +64,7 @@ TESTS ?= pkg/*_test.go
 .PHONY: notes
 
 notes:
-	grep -Ern $(NOTES) $(SOURCES) $(TESTS)
+	grep -Ern $(NOTES) $(SOURCES) $(TESTS) $(COMMANDS)
 
 
 
@@ -71,6 +77,7 @@ fmt: fmt-go
 fmt-go:
 	$(GO_FMT) $(SRC)
 	$(GO_FMT) $(EXAMPLES)
+	$(GO_FMT) $(CMD)
 
 
 # LINT #
@@ -82,6 +89,7 @@ lint: lint-go
 lint-go:
 	$(GO_LINT) $(SRC)
 	$(GO_LINT) $(EXAMPLES)
+	$(GO_LINT) $(CMD)
 
 
 # UNIT TESTS #
@@ -154,7 +162,7 @@ benchmarks-go:
 .PHONY: install
 
 install:
-	go install
+	go install $(CMD)
 
 # Build:
 .PHONY: build

@@ -26,12 +26,9 @@ import (
 Computes the arithmetic mean of a numeric `array`.
 
 ``` go
-var data = make( []float64, 101 )
-for i := 0; i < len( data ); i++ {
-	data[ i ] = float64( i )
-}
+data := []float64{7,3,1,5}
 mu := compute.Mean( data )
-// returns 50
+// returns 5
 ```
 
 
@@ -46,7 +43,7 @@ import (
 )
 
 func main() {
-	var data = make([]float64, 101)
+	data := make([]float64, 101)
 	for i := 0; i < len(data); i++ {
 		data[i] = float64(i)
 	}

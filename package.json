@@ -12,7 +12,7 @@
 			"email": "kgryte@gmail.com"
 		}
 	],
-	"cmd": "",
+	"cmd": "github.com/go-compute/mean/cmd/mean",
 	"pkg": "github.com/go-compute/mean/pkg",
 	"repository": {
 		"type": "git",

@@ -1,5 +1,9 @@
 /*
 Package mean is a library for computing the arithmetic mean of a numeric array.
+
+Usage:
+
+
 */
 package mean
 
